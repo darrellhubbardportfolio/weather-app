@@ -23,3 +23,8 @@ main
     height: 200px;
     max-height: 125px;
 }
+
+.card-header
+{
+    background-color: transparent !important
+}
