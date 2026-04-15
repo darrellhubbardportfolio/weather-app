@@ -22,8 +22,19 @@ app.use(express.json());
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
+// home page
 app.get("/", (req, res) => {
     res.render("index");
+});
+
+// dashboard
+app.get("/dashboard", (req, res) => {
+    res.render("dashboard");
+});
+
+// logging of rates
+app.get("/logging", (req, res) => {
+    res.render("logging");
 });
 
 // retrieve weather from this api

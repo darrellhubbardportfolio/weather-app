@@ -28,27 +28,30 @@
         
         <section class="container-fluid p-5">
 
-            <!-- show the rate limit information-->
+            <!-- look up a city weather for today -->
+
             <div class="row col-12 align-items-start">
 
                 <!-- where you make a requrest -->
-                <div class="container-fluid col-lg-6 col-md-6 col-sm-12 mb-3">
+                <div class="container-fluid col-12 mb-3">
 
                     <div class="card col-12">
 
-                        <div class="card-header col-12">
+                        <div class="card-header col-12 bg-twitter">
 
                             <div class="container-fluid col-12 justify-content-between">
 
-                                <h5 class="m-0 p-0">Make A Request</h5>
+                                <h5 class="m-0 p-0 text-white">Make A Request</h5>
                                 <!--
                                     a location icon of some sort
                                 -->
-                                <span class="material-symbols-outlined fs-1">location_searching</span>
+                                <span class="material-symbols-outlined text-white">location_searching</span>
                             </div>
                         </div>
                         <div class="card-body col-12">
+
                             <div class="container-fluid">
+
                                 <form 
                                 action="/weather" 
                                 method="GET" 
@@ -56,8 +59,8 @@
                                 id="locationForm"
                                 enctype="application/x-www-form-urlencoded"
                                 >
-                                    <div class="mb-3">
-                                        <label for="location" class="form-label">Enter Location</label>
+                                    <div class="mb-3 flex-column">
+                                        <label for="location" class="form-label col-12">Enter Location</label>
                                         <input type="text" class="form-control" id="location" name="location" placeholder="Enter location" required />
                                     </div>
                                     <button type="submit" class="btn btn-primary">Get Weather</button>
@@ -67,175 +70,28 @@
                     </div>
                 </div>
 
-                <!-- see actual update information -->
+                <!-- add a list of cities to be permanent options -->
                 <div class="container-fluid col-lg-6 col-md-6 col-sm-12 mb-3">
 
                     <div class="card col-12">
 
-                        <div class="card-header col-12">
-
-                            <div class="container-fluid col-12">
-
-                                <h5 class="m-0 p-0">Current Weather Information</h5>
-                            </div>
+                        <div class="card-header col-12 bg-twitter">
+                            <h5 class="m-0 p-0 text-white col-12">Add Cities</h5>
                         </div>
-                        <div class="card-body col-12 flex-column">
 
-                            <h5 class="card-title mb-3 col-12">Returning back information</h5>
-                            <ul class="flex-column col-12">
-                                <li class="card-text col-12 justify-content-start gap-3">
-                                    <span class="material-symbols-outlined">location_on</span>
-                                    <span id="locationResult">Location: N/A</span>
-                                </li>
-                                <li class="card-text col-12 justify-content-start gap-3">
-                                    <span class="material-symbols-outlined">thermostat</span>
-                                    <span id="temperatureResult">Temperature: N/A</span>
-                                </li>
-                                <li class="card-text col-12 justify-content-start gap-3">
-                                    <span class="material-symbols-outlined">cloud</span>
-                                    <span id="conditionResult">Condition: N/A</span>
-                                </li>
-                            </ul>
+                        <div class="card-body col-12">
+                            
+                            <form>
+                                <div class="flex-column container-fluid">
+
+
+                                </div>
+                                <div class="container-fluid col-12">
+                                    <button type="submit" class="btn btn-primary">Add City</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </div>
-
-                <!-- monitor rate limit -->
-                <div class="container-fluid col-lg-6 col-md-6 col-sm-12 mb-3">
-
-                    <div class="card col-12">
-                        
-                        <div class="card-header col-12">
-
-                            <div class="container-fluid justify-content-between">
-                                <h5 class="m-0 p-0 text-knockout text-twitter">Monitor Rate</h5>
-                                <!--
-                                    data_usage or data_exploration
-                                -->
-                                <span class="material-symbols-outlined fs-1">data_usage</span>
-                            </div>
-                        </div>
-                        <div class="card-body col-12 flex-column">
-
-                            <p class="card-text text-start col-12 mb-3">Monitor your current rate limit usage</p>
-                            <!-- create a chart here -->
-                            <div class="container-fluid col-12 mb-3">
-                                <canvas class="col-12 border" id="rateLimitChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- settings -->
-                <div class="container-fluid col-lg-6 col-md-6 col-sm-12 mb-3">
-
-                    <div class="card col-12">
-                        
-                        <div class="card-header col-12">
-
-                            <div class="container-fluid col-12 justify-content-between">
-
-                                <h5 class="m-0 p-0 col-9">Set Rate Limit</h5>
-                                <button type="button" class="btn material-symbols-outlined fs-1 w-auto">toggle_off</button>
-                            </div>
-                        </div>
-                        <div class="card-body col-12 flex-column">
-
-                            <p class="card-text text-start col-12">
-                                Set your desired rate limit; Avoids hitting the limit.
-                            </p>
-                            <!-- attempt to synchronize rate with non api endpoint -->
-                            <div class="container-fluid col-12 mb-3">
-                                <!-- monitor rate by number-->
-                                <div class="container-fluid col-lg-6 col-md-6 col-sm-12 flex-column mb-3">
-
-                                    <label for="rateLimit" class="form-label col-12">Set Rate Limit</label>
-
-                                    <input type="number" name="rateLimit" id="rateLimit" class="form-control" placeholder="Enter rate limit" min="0" minlength="1" required />
-                                </div>
-                                <!-- choose if this is monthly, daily, hourly, or just flat amount -->
-                                <div class="container-fluid col-lg-6 col-md-6 col-sm-12 flex-column mb-3">
-
-                                    <label for="rateLimitType" class="form-label col-12">Rate Limit Type</label>
-                                    <select class="form-select" id="rateLimitType" name="rateLimitType">
-                                        <option value="monthly">Monthly</option>
-                                        <option value="daily">Daily</option>
-                                        <option value="hourly">Hourly</option>
-                                        <option value="flat">Flat Amount</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <p class="card-text-start col-12">
-                                Restrict the number of times a client can make a request
-                            </p>
-                            <!-- restricts the number of times a client can make a request per period -->
-                            <div class="container-fluid col-12 mb-3">
-
-                                <div class="container-fluid col-lg-6 col-md-6 col-sm-12 flex-column mb-3">
-
-                                    <label for="rateLimit" class="form-label col-12">Set Rate Limit</label>
-
-                                    <input type="number" name="rateLimit" id="rateLimit" class="form-control" placeholder="Enter rate limit" min="0" minlength="1" required />
-                                </div>
-                                <!-- choose if this is monthly, daily, hourly, or just flat amount -->
-                                <div class="container-fluid col-lg-6 col-md-6 col-sm-12 flex-column mb-3">
-
-                                    <label for="rateLimitType" class="form-label col-12">Rate Limit Type</label>
-                                    <select class="form-select" id="rateLimitType" name="rateLimitType">
-                                        <option value="monthly">Monthly</option>
-                                        <option value="daily">Daily</option>
-                                        <option value="hourly">Hourly</option>
-                                        <option value="flat">Flat Amount</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer col-12">
-                            <button type="submit" class="btn btn-dark">Update Rate Limit</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- history or log of making requests-->
-                <div class="container-fluid col-12">
-
-                    <table class="table table-striped border rounded-2">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Location</th>
-                                <th scope="col">Temperature</th>
-                                <th scope="col">Condition</th>
-                                <th scope="col">Time of Request</th>
-                            </tr>
-                        </thead>
-                        <tbody id="requestHistory">
-                            <!-- add one sample item here -->
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>New York</td>
-                                <td>25°C</td>
-                                <td>Sunny</td>
-                                <td>2024-06-01 12:00:00</td>
-                            </tr>
-                            <!-- add two more, one from atlanta, ga and another from tokyo, japan -->
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Atlanta</td>
-                                <td>28°C</td>
-                                <td>Cloudy</td>
-                                <td>2024-06-01 13:00:00</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Tokyo</td>
-                                <td>30°C</td>
-                                <td>Rainy</td>
-                                <td>2024-06-01 14:00:00</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </section>
@@ -247,5 +103,6 @@
     <!-- Chart Js-->
     <!-- JavaScript -->
     <script src="/public/js/Weather.js"></script>
+    <script src="/public/js/RatePlan.js"></script>
 </body>
 </html>

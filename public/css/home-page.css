@@ -15,16 +15,6 @@ header
 
 main
 {
+    justify-content: start;
     min-height: 100vh;
-}
-
-#rateLimitChart 
-{
-    height: 200px;
-    max-height: 125px;
-}
-
-.card-header
-{
-    background-color: transparent !important
 }

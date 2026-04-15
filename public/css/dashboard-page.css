@@ -1,0 +1,66 @@
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 225px;
+}
+
+main
+{
+    min-height: 100vh;
+}
+
+#rateLimitChart 
+{
+    height: 200px;
+    max-height: 125px;
+}
+
+.card
+{
+    box-shadow: 0 0 4px rgb(234, 234, 234);
+}
+.card-header,
+.card-footer
+{
+    background-color: transparent !important
+}
+
+.card-header 
+{
+    border: 0 !important;
+}
+
+.edit-rate-plan-btn
+{
+    border: 1px solid #0D6EFD;
+    background-color: white;
+    color: #0D6EFD;
+}
+.edit-rate-plan-btn:hover
+{
+    border: 0 !important;
+    background-color: #0D6EFD !important;
+    color: white !important;
+}
+.edit-rate-plan-btn.active
+{
+    border: 0;
+    background-color: #0D6EFD;
+    color: white;
+}
+
+/*
+    BOOTSTRAP CLASSES FOR COLORS
+
+    $primary => background-color: #0D6EFD;
+
+*/
