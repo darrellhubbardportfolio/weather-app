@@ -1,0 +1,25 @@
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 225px;
+}
+
+main
+{
+    min-height: 100vh;
+}
+
+#rateLimitChart 
+{
+    height: 200px;
+    max-height: 125px;
+}

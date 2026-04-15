@@ -1,0 +1,47 @@
+
+body
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+main,
+section,
+div,
+button,
+ul
+li,
+a,
+.material-symbols-outlined,
+.material-icons,
+.bi
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.material-symbols-outlined,
+.material-icons,
+.bi
+{
+    padding: 4px;
+}
+main
+{
+    flex-direction: column;
+}
+ul
+{
+    margin: 0;
+    padding: 4px;
+}
+li
+{
+    list-style: none;
+}
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
