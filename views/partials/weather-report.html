@@ -1,0 +1,17 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" id="weather-report">
+
+    <!-- add components here -->
+    <circle cx="100" cy="100" r="90" fill="none" id="weather-circle" />
+
+    <text x="100" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" id="weather-conditions">
+        <%- weather-conditions %>
+    </text>
+
+    <text x="100" y="115" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" id="temperature">
+        <%- temperature %>
+    </text>
+
+    <text x="100" y="145" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" id="temperature-range">
+        H <%- high-temp %> L <%- low-temp %>
+    </text>
+</svg>

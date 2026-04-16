@@ -3,6 +3,7 @@ header
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 .hero
 {
@@ -10,9 +11,70 @@ header
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 225px;
 }
 
+.weather-report-card
+{
+    height: 425px;
+}
+
+.weather-report-icon
+{
+    font-size: 100px !important;
+}
+
+/* .cloudy-weather
+{
+    background: #81ff8a;
+    background: -webkit-linear-gradient(to right, #64965e, #81ff8a);
+    background: linear-gradient(to right, #64965e, #81ff8a); 
+} */
+
+.cloudy-weather
+{
+    background: #E6DADA;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #274046, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.thunderstorm-weather
+{
+
+}
+
+.sunny-weather
+{
+
+}
+
+.snowy-weather
+{
+
+}
+
+#weather-report
+{
+    fill: white;
+}
+#weather-circle
+{
+    stroke: #50784B;
+    stroke-width: 8px;
+    /* fill: url(#ringGradient); */
+    fill: none;
+}
+#weather-conditions
+{
+    fill: white;
+}
+#temperature
+{
+    fill: white;
+}
+#temperature-range
+{
+    fill: white;
+}
 main
 {
     justify-content: start;
