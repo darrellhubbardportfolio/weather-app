@@ -11,6 +11,7 @@ header
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: 300px;
 }
 
 .weather-report-card
@@ -44,12 +45,16 @@ header
 
 .sunny-weather
 {
-
+    background: #1DA1F2;
+    background: -webkit-linear-gradient(to right, #009ffc, #1DA1F2);
+    background: linear-gradient(to right, #009ffc, #1DA1F2);
 }
 
 .snowy-weather
 {
-
+    background: #C9D6FF;
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF);
 }
 
 #weather-report

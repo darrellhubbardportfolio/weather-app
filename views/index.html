@@ -13,46 +13,73 @@
     <link rel="stylesheet" href="/public/css/home-page.css" />
 </head>
 <body>
+
     <header class="container-fluid p-5">
 
-        <div class="hero container-fluid">
+        <div class="hero container-fluid sunny-weather p-3 rounded-2">
 
-            <div class="container-fluid col-lg-3 col-md-6 col-sm-12 m-0 mb-3">
+            <div class="row col-12 h-100 align-items-start">
 
-                <div class="card col-12 cloudy-weather border-0 weather-report-card">
+                <!-- first slot -->
+                <div class="container-fluid col-lg-8 col-md-6 col-sm-12 h-100">
 
-                    <div class="card-header bg-transparent border-0 flex-column">
+                    <div class="card col-12 h-100 border-0 bg-transparent">
 
-                        <span class="material-symbols-outlined text-white weather-report-icon">partly_cloudy_day</span>
+                        <div class="card-header col-12 border-0 bg-transparent">
 
-                        <h5 class="card-title col-12 text-center text-white m-0 p-0">Atlanta, GA</h5>
+                            <div class="container-fluid justify-content-start gap-3">
+
+                                <h1 class="m-0 p-0 fw-bold text-white">Weather Report</h1>
+
+                                <!-- toggle button -->
+                                <div class="gap-`">
+
+                                    <span class="material-symbols-outlined fs-1 text-white">toggle_off</span>
+                                    <span class="text-white text-uppercase">off</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body col-12">
+
+                            <div class="row col-lg-6 col-md-6 col-sm-12 me-auto mt-auto">
+
+                                <!-- current temperature -->
+                                <div class="container col-lg-4 col-md-4 col-sm-4 justify-content-start flex-column">
+                                    <label class="text-white col-12 text-start">Current</label>
+                                    <h5 class="text-white fs-1 col-12 text-start">83 F</h5>
+                                </div>
+                                <!-- high temperature -->
+                                <div class="container col-lg-4 col-md-4 col-sm-4 justify-content-start flex-column">
+                                    <label class="text-white col-12 text-start">High</label>
+                                    <h5 class="text-white fs-1 col-12 text-start">85 F</h5>
+                                </div>
+                                <!-- low temperature -->
+                                <div class="container col-lg-4 col-md-4 col-sm-4 justify-content-start flex-column">
+                                    <label class="text-white col-12 text-start">Low</label>
+                                    <h5 class="text-white fs-1 col-12 text-start">61 F</h5>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body flex-column">
+                </div>
+                <!-- second slot -->
+                <div class="container-fluid col-lg-4 col-md-6 col-sm-12 h-100">
 
-                        <!-- show the weather report -->
-                        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" id="weather-report">
+                    <div class="card col-12 h-100 border-0 bg-transparent">
 
-                            <circle cx="100" cy="100" r="90" id="weather-circle" />
-
-                            <text x="100" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" id="weather-conditions">
-                                cloudy
-                            </text>
-
-                            <text x="100" y="115" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" id="temperature">
-                                67
-                            </text>
-
-                            <text x="100" y="145" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" id="temperature-range">
-                                H 72 L 59
-                            </text>
-                        </svg>
+                        <div class="card-body flex-column text-white">
+                            <p class="card-title">Sunny</p>
+                            <p class="card-text">Atlanta, GA</p>
+                            <span class="material-symbols-outlined" style="font-size: 125px;">sunny</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- separator -->
-    <hr class="col-12" />
+    <!-- <hr class="col-12" /> -->
 
     <main class="container-fluid">
 
@@ -61,10 +88,10 @@
 
             <!-- look up a city weather for today -->
 
-            <div class="row col-12 align-items-start">
+            <div class="row col-12 align-items-start justify-content-start">
 
                 <!-- where you make a requrest -->
-                <div class="container-fluid col-12 mb-3">
+                <div class="container-fluid col-lg-3 col-md-4 col-sm-12 m-0 mb-3">
 
                     <div class="card col-12">
 
@@ -102,7 +129,7 @@
                 </div>
 
                 <!-- add a list of cities to be permanent options -->
-                <div class="container-fluid col-lg-6 col-md-6 col-sm-12 mb-3">
+                <div class="container-fluid col-lg-4 col-md-4 col-sm-12 m-0 mb-3">
 
                     <div class="card col-12">
 
@@ -121,6 +148,33 @@
                                     <button type="submit" class="btn btn-primary">Add City</button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- a table of 3 cities, which one is atlanta, ga and the rest are random -->
+                <div class="container-fluid col-12 col-md-12 col-sm-12 m-0 mb-3">
+
+                    <div class="col-12 border rounded-2 flex-column">
+
+                        <!-- acts as the header -->
+                        <div class="container-fluid flex-column col-12 p-0 text-white">
+
+                            <div class="container-fluid justify-content-between bg-twitter col-12" style="height: 45px;">
+                                <span class="col-lg-4 col-md-4 col-sm-12">City</span>
+                                <span class="col-lg-4 col-md-4 col-sm-12">State</span>
+                                <span class="col-lg-4 col-md-4 col-sm-12">CreatedAt</span>
+                            </div>
+                        </div>
+
+                        <!-- acts as the body -->
+                        <div class="container-fluid flex-column col-12">
+
+                            <div class="container-fluid col-12">
+                                <span>Atlanta</span>
+                                <span>GA</span>
+                                <span>April 28, 2026</span>
+                            </div>
                         </div>
                     </div>
                 </div>

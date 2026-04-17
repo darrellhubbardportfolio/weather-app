@@ -8,3 +8,38 @@ Instructions for creating a gradient.
 </defs>
 
 then for the circle or other object add the fill=url(id of the gradient);
+
+sample component
+<!-- weather report card -->
+<div class="container-fluid col-lg-3 col-md-6 col-sm-12 m-0 mb-3">
+
+    <div class="card col-12 cloudy-weather border-0 weather-report-card">
+
+        <div class="card-header bg-transparent border-0 flex-column">
+
+            <span class="material-symbols-outlined text-white weather-report-icon">partly_cloudy_day</span>
+
+            <h5 class="card-title col-12 text-center text-white m-0 p-0">Atlanta, GA</h5>
+        </div>
+        <div class="card-body flex-column">
+
+            <!-- show the weather report -->
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" id="weather-report">
+
+                <circle cx="100" cy="100" r="90" id="weather-circle" />
+
+                <text x="100" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" id="weather-conditions">
+                    cloudy
+                </text>
+
+                <text x="100" y="115" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" id="temperature">
+                    67
+                </text>
+
+                <text x="100" y="145" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" id="temperature-range">
+                    H 72 L 59
+                </text>
+            </svg>
+        </div>
+    </div>
+</div>
